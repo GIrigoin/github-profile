@@ -7,7 +7,7 @@ export default {
       "repo-to": "#1D1B48",
       "search-border": "#3662E3",
       tag: "#20293A",
-      "app-bg": "#364153",
+      "color-bg": "#364153",
       "secondary-text": "#4A5567",
       "main-text": "#CDD5E0",
     },

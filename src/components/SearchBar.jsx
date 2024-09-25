@@ -30,11 +30,7 @@ const SearchBar = () => {
         value={searchInput}
         onChange={debounced}
       />
-      <ResultProfile
-        name={searchResult.name}
-        image={searchResult.avatar_url}
-        bio={searchResult.bio}
-      />
+      <ResultProfile />
     </div>
   );
 };

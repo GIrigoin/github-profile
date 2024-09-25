@@ -1,12 +1,31 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import ProfileInfo from "./components/ProfileInfo";
 import SearchBar from "./components/SearchBar";
+import { useDispatch } from "react-redux";
+import { setCurrentProfile, setProfileRepos } from "./redux/profilesSlice";
+import { getProfile, getRepos } from "./utils/dataFetching";
+import ReposBox from "./components/ReposBox";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const initialize = async () => {
+      try {
+        const profile = await getProfile("github");
+        const repos = await getRepos("github");
+        dispatch(setCurrentProfile(profile));
+        dispatch(setProfileRepos(repos));
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    initialize();
+  }, []);
   return (
     <div className="text-main-text bg-color-bg max-w-7xl h-screen bg-app-bg bg-no-repeat bg-[length:1280px_240px] bg-top">
       <SearchBar />
-      <div>Profile info</div>
-      <div>Repos</div>
+      <ProfileInfo />
+      <ReposBox />
     </div>
   );
 }

@@ -7,7 +7,10 @@ const RepoCard = ({ repo }) => {
     window.open(repo.html_url, "_blank");
   };
   return (
-    <button onClick={handleClick}>
+    <button
+      onClick={handleClick}
+      className="bg-gradient-to-r from-repo-from to-repo-to rounded-2xl"
+    >
       <h2>{repo.name}</h2>
       <p>{repo.description}</p>
       <div>

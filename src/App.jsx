@@ -22,7 +22,7 @@ function App() {
     initialize();
   }, []);
   return (
-    <div className="text-main-text bg-color-bg max-w-7xl h-screen bg-app-bg bg-no-repeat bg-[length:1280px_240px] bg-top">
+    <div className="text-main-text bg-color-bg max-w-7xl h-full bg-app-bg bg-no-repeat bg-[length:1280px_240px] bg-top px-[4.5rem] xl:px-[9.5rem]">
       <SearchBar />
       <ProfileInfo />
       <ReposBox />

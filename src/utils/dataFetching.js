@@ -33,7 +33,7 @@ export const getRepos = async (profile) => {
         const today = Date.now();
         const update = new Date(updated_at);
         const daysAfterLastUpdate = Math.floor(
-          (today - update) / 1000 / 60 / 24
+          (today - update) / 1000 / 60 / 60 / 24
         );
         const output = {
           name,

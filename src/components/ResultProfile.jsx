@@ -26,11 +26,22 @@ const ResultProfile = () => {
   };
 
   return (
-    <button onClick={handleClick}>
-      <img src={searchResult.avatar_url} alt={searchResult.name} />
-      <section>
-        <p>{searchResult.name}</p>
-        <p>{searchResult.bio}</p>
+    <button
+      onClick={handleClick}
+      className={`mt-2 w-[30rem] bg-tag rounded-xl p-2  flex-row items-center justify-start gap-2 ${
+        searchResult.login ? "flex" : "hidden"
+      }`}
+    >
+      <img
+        className="w-[4.5rem] h-[4.5rem] rounded-xl"
+        src={searchResult.avatar_url}
+        alt={searchResult.name}
+      />
+      <section className="flex flex-col items-start ">
+        <p className="text-body">{searchResult.name}</p>
+        <p className="text-small text-secondary-text font-semibold">
+          {searchResult.bio}
+        </p>
       </section>
     </button>
   );

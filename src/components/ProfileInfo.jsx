@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const ProfileInfo = () => {
   const profile = useSelector((state) => state.profiles.currentProfile);
   return (
-    <div>
+    <div className="mb-9">
       <section className="flex flex-row justify-start items-start  lg:items-end mb-6">
         <img
           className="w-[6.5rem] h[6.5rem] border-8 rounded-2xl border-color-bg mr-8"
@@ -17,7 +17,7 @@ const ProfileInfo = () => {
           <Tag name={"Location"} value={profile.location} />
         </div>
       </section>
-      <p className="text-large text-main-text">
+      <p className="text-large text-main-text font-medium">
         {profile.name || profile.login}
       </p>
       <p className="text-body text-main-text">{profile.bio}</p>

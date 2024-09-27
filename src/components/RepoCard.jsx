@@ -9,24 +9,29 @@ const RepoCard = ({ repo }) => {
   return (
     <button
       onClick={handleClick}
-      className="bg-gradient-to-r from-repo-from to-repo-to rounded-2xl"
+      className="bg-gradient-to-r from-repo-from to-repo-to rounded-2xl p-5 flex flex-col items-start justify-between"
     >
-      <h2>{repo.name}</h2>
-      <p>{repo.description}</p>
-      <div>
+      <h2 className="text-title text-main-text font-medium">{repo.name}</h2>
+      <p className="my-4 text-body text-main-text text-start">
+        {repo.description}
+      </p>
+      <div className="flex flex-row justify-between items-center">
         {repo.license && (
-          <div>
-            <img src={licenseIcon} alt="license" /> <span>{repo.license}</span>
+          <div className="flex flex-row justify-start mr-4">
+            <img src={licenseIcon} alt="license" />{" "}
+            <span className="text-body text-main-text">{repo.license}</span>
           </div>
         )}
-        <div>
-          <img src={forksIcon} alt="forks" /> <span>{repo.forks}</span>
+        <div className="flex flex-row justify-start mr-4">
+          <img src={forksIcon} alt="forks" />{" "}
+          <span className="text-body text-main-text">{repo.forks}</span>
+        </div>
+        <div className="flex flex-row justify-start mr-4">
+          <img src={watchersIcon} alt="watchers" />{" "}
+          <span className="text-body text-main-text">{repo.watchers}</span>
         </div>
         <div>
-          <img src={watchersIcon} alt="watchers" /> <span>{repo.watchers}</span>
-        </div>
-        <div>
-          <p>
+          <p className="text-small text-main-text">
             updated <span>{repo.daysAfterLastUpdate}</span> days ago
           </p>
         </div>

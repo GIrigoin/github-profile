@@ -11,13 +11,14 @@ const ReposBox = () => {
     );
   };
   return (
-    <div className="flex flex-col items-center min-w-full">
+    <div>
       <div className="flex flex-col lg:grid gap-7 lg:grid-cols-2 lg:grid-rows-2">
         {repos &&
           repos.map((repo, index) => <RepoCard key={index} repo={repo} />)}
       </div>
-
-      <button onClick={handleClick}>View all repositories</button>
+      <div className="flex flex-col items-center mt-12 pb-12">
+        <button onClick={handleClick}>View all repositories</button>
+      </div>
     </div>
   );
 };
